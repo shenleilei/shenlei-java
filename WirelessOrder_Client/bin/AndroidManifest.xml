@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.amaker.wlo"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <meta-data
+		android:name="com.amap.api.v2.apikey"
+		android:value="970636f57473019a25422578ae04ee1c"/>
+        <activity android:name=".LoginActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity android:name="UpdateActivity"/>
+        <activity android:name="CheckTableActivity"/>
+        <activity android:name="MainMenuActivity"/>
+        <activity android:name="OrderActivity"/>
+        <activity android:name="PayActivity"/>
+        
+       <activity
+        android:name="BasicMapActivity"  
+       />  
+        
+        <provider android:name="com.amaker.provider.TableProvider" android:authorities="com.amaker.provider.TABLES"/>
+		<provider android:name="com.amaker.provider.MenuProvider" android:authorities="com.amaker.provider.MENUS"/>
+
+    </application>
+    <uses-sdk android:minSdkVersion="10" />
+
+<uses-permission android:name="android.permission.INTERNET"/>
+ <uses-permission android:name="android.permission.INTERNET" />  
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />  
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />  
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />  
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />  
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />  
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />  
+<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />  
+
+</manifest> 

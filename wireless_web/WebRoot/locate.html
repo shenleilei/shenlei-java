@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Hello,world</title>
+<style type="text/css">
+html{height:100%}
+body{height:100%;margin:0px;padding:0px}
+#container{height:100%}
+</style>
+<script type="text/javascript"
+src="http://webapi.amap.com/maps?v=1.2&key=970636f57473019a25422578ae04ee1c">
+</script>
+<script type="text/javascript">
+function initialize(){ 
+ 
+ var position=new AMap.LngLat(114.361,30.524);//创建中心点坐标  
+  var mapObj=new AMap.Map("container",{center:position});//创建地图实例  
+//构建点对象                
+var marker = new AMap.Marker({     
+
+
+
+           
+  map:mapObj, //将点添加到地图                
+  position:new AMap.LngLat(114.360763,30.524011),                   
+  icon:" http://webapi.amap.com/images/0.png  ",//marker图标，直接传递地址url                
+  offset:new AMap.Pixel(-10,-35) //相对于基点的位置                
+});                
+            
+var info = [];                
+info.push("<b>&nbsp;&nbsp;点餐软件</b>");                
+info.push("&nbsp;&nbsp;电话 : 13026321978  邮编 : 430079");                
+info.push("&nbsp;&nbsp;地址 :湖北省武汉市洪山区珞喻路152号九号楼");                
+            
+var inforWindow = new AMap.InfoWindow({                
+  offset:new AMap.Pixel(0,-23),                
+  content:info.join("<br  />")                
+});                
+AMap.event.addListener(marker,"click",function(e){                
+  inforWindow.open(mapObj,marker.getPosition());                
+});                
+
+}
+</script>
+</head>
+
+<body onload="initialize()">
+<div id="container"></div>
+</body>
+</html>
